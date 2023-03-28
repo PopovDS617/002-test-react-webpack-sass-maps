@@ -19,9 +19,17 @@ export const PickpointItem = (props: PickpointItemProps) => {
     ctx.setCoordsHandler(latitude, longitude);
     ctx.setCurrentPickpoint(id);
   };
+  if (ctx.currentPickpoint === id) {
+    console.log('yes');
+  }
 
   return (
-    <div className="item-container" onClick={handleClickPickpoint}>
+    <div
+      className={`item-container ${
+        ctx.currentPickpoint === id ? 'item-container__active' : ''
+      }`}
+      onClick={handleClickPickpoint}
+    >
       <div className="item-container__header">{address}</div>
 
       <ul className="item-badgelist">
