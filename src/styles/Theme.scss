@@ -1,0 +1,19 @@
+@import './reset.scss';
+
+:root {
+  // Application
+  --app-fontfamily: sans-serif, cursive;
+  --app-bgcolor: #2a2c2d;
+  --app-border-color: #3b3f44;
+  --app-font-color: #969c9f;
+
+  // Pickpoint item & badge
+  --pickp-bg-color: #404749;
+  --pickp-bg-color-hover: #232627;
+  --pickp-badge-color: #2a2c2d;
+  --pickp-fontsize-d: 1.25rem;
+  --pickp-fontsize-m: 1rem;
+  --pickp-font-color-active: white;
+  --pickp-badge-fontsize-d: 1rem;
+  --pickp-badge-fontsize-m: 0.8rem;
+}

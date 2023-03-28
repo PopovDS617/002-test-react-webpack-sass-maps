@@ -9,17 +9,17 @@ module.exports = [
     use: {
       loader: 'ts-loader',
       options: {
-        transpileOnly: true,
-      },
-    },
+        transpileOnly: true
+      }
+    }
   },
   {
     // CSS Loader
     test: /\.css$/,
     use: [
       { loader: inDev() ? 'style-loader' : MiniCssExtractPlugin.loader },
-      { loader: 'css-loader' },
-    ],
+      { loader: 'css-loader' }
+    ]
   },
   {
     // SCSS (SASS) Loader
@@ -27,8 +27,8 @@ module.exports = [
     use: [
       { loader: inDev() ? 'style-loader' : MiniCssExtractPlugin.loader },
       { loader: 'css-loader' },
-      { loader: 'sass-loader' },
-    ],
+      { loader: 'sass-loader' }
+    ]
   },
   {
     // Less loader
@@ -36,16 +36,15 @@ module.exports = [
     use: [
       { loader: inDev() ? 'style-loader' : MiniCssExtractPlugin.loader },
       { loader: 'css-loader' },
-      { loader: 'less-loader' },
-    ],
+      { loader: 'less-loader' }
+    ]
   },
   {
     // Assets loader
-    // More information here https://webpack.js.org/guides/asset-modules/
     test: /\.(gif|jpe?g|tiff|png|webp|bmp|svg|eot|ttf|woff|woff2)$/i,
     type: 'asset',
     generator: {
-      filename: 'assets/[hash][ext][query]',
-    },
-  },
+      filename: 'assets/[hash][ext][query]'
+    }
+  }
 ];

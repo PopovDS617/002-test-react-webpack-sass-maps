@@ -2,20 +2,19 @@ module.exports = {
   mode: 'production',
   entry: ['./src/main.tsx'],
   module: {
-    rules: require('./webpack.rules'),
+    rules: require('./webpack.rules')
   },
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
-    clean: true,
+    clean: true
   },
   plugins: [...require('./webpack.plugins')],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
     alias: {
-      // Custom Aliases
-      ...require('./webpack.aliases'),
-    },
+      ...require('./webpack.aliases')
+    }
   },
   stats: 'errors-warnings',
   optimization: {
@@ -31,9 +30,9 @@ module.exports = {
         vendor: {
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all',
-        },
-      },
-    },
-  },
+          chunks: 'all'
+        }
+      }
+    }
+  }
 };
