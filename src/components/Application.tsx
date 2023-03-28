@@ -11,18 +11,25 @@ import { addID } from '@src/utils/addID';
 
 import { MapContainer } from './Map/MapContainer';
 import './Application.scss';
-import { DUMMY_DATA } from '@src/__test__/mock-data/DUMMY_DATA';
 
 const Application = () => {
   const { loading, error, value } = useAsync(getCoords, []);
 
   return (
     <div className="app-container">
-      <Header />
-      {loading && <BounceLoader color="#969c9f" size={80} />}
+      <div className="top-level">
+        <Header />
+        {loading && (
+          <div className="loading-spinner">
+            <BounceLoader color="#969c9f" size={80} />
+          </div>
+        )}
+        {error && <p>Что-то пошло не так . . .</p>}
+      </div>
       {!error && !loading && (
         <div className="app-content">
           <PickpointList list={addID(value)} error={error} loading={loading} />
+
           <MapContainer />
         </div>
       )}

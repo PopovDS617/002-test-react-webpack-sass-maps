@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react';
-import { Dispatch, SetStateAction } from 'react';
 
 type TInitialContext = {
   coords: number[] | [];

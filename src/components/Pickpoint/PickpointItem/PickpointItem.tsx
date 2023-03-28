@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Badge } from '../Badge/Badge';
 import { useAppContext } from '@src/context/AppContext';
 
-import { TPickpoint, TPickpointWithID } from '@src/models/Pickpoint';
+import { TPickpointWithID } from '@src/models/Pickpoint';
 import './PickpointItem.scss';
 
 type PickpointItemProps = {
@@ -19,9 +19,6 @@ export const PickpointItem = (props: PickpointItemProps) => {
     ctx.setCoordsHandler(latitude, longitude);
     ctx.setCurrentPickpoint(id);
   };
-  if (ctx.currentPickpoint === id) {
-    console.log('yes');
-  }
 
   return (
     <div

@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
 import { appContext } from './AppContext';
-import { Coords } from '@src/models/Coords';
 
 const AppProvider = (props: PropsWithChildren) => {
   const [coords, setCoords] = useState<number[] | []>([]);

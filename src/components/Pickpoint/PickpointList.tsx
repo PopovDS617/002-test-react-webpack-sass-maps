@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { PickpointItem } from './PickpointItem/PickpointItem';
 
 import { TPickpointListWithID } from '@src/models/Pickpoint';
+import { motion } from 'framer-motion';
 
 import './PickpointList.scss';
-import { Coords } from '@src/models/Coords';
 
 type PickpointListProps = {
   loading: boolean;
@@ -13,6 +13,12 @@ type PickpointListProps = {
 };
 
 export const PickpointList = (props: PickpointListProps) => {
+  const animationVariants = {
+    hidden: { opacity: 0, x: 0, y: -20 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: -0, y: 20 }
+  };
+
   const { loading, error, list } = props;
 
   return (
@@ -20,11 +26,20 @@ export const PickpointList = (props: PickpointListProps) => {
       <ul>
         {list?.pickPoints &&
           !loading &&
-          list.pickPoints.map(item => {
+          list.pickPoints.map((item, index) => {
+            const count = 0.3;
+
             return (
-              <li key={item.id}>
+              <motion.li
+                key={item.id}
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                variants={animationVariants}
+                transition={{ duration: count * index, type: 'ease' }}
+              >
                 <PickpointItem itemData={item} />
-              </li>
+              </motion.li>
             );
           })}
       </ul>
