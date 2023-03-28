@@ -1,0 +1,14 @@
+@import '../Application.scss';
+
+.pickpoint-list {
+  max-width: 800px;
+  width: 100%;
+  height: 450px;
+
+  overflow-y: auto;
+
+  @media screen and (max-width: 700px) {
+    width: 90%;
+    height: 310px;
+  }
+}

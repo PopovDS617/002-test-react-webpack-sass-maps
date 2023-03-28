@@ -1,0 +1,27 @@
+@import '../../Application.scss';
+
+.item-container {
+  cursor: pointer;
+  background-color: var(--pickp-bg-color);
+  padding: 15px;
+  margin: 10px 0;
+  font-size: var(--pickp-fontsize-d);
+  transition: background-color 0.25s;
+
+  @media screen and (max-width: 700px) {
+    font-size: var(--pickp-fontsize-m);
+  }
+
+  &:hover {
+    background-color: var(--pickp-bg-color-hover);
+  }
+}
+
+.item-container__header {
+  margin-bottom: 10px;
+}
+
+.item-badgelist {
+  display: flex;
+  gap: 10px;
+}

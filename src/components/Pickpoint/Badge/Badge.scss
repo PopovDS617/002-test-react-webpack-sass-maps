@@ -1,0 +1,14 @@
+@import '../../Application.scss';
+
+.badge {
+  font-size: var(--pickp-badge-fontsize-d);
+  background-color: var(--pickp-badge-color);
+  padding: 10px;
+  border-radius: 5px;
+
+  @media screen and (max-width: 700px) {
+    width: 350px;
+    height: 350px;
+    font-size: var(--pickp-badge-fontsize-m);
+  }
+}
